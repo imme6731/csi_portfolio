@@ -17,11 +17,12 @@ export const GlobalStyled = createGlobalStyle`
 ${reset}
 body{
     font-family: "Noto Sans KR", sans-serif;
-    background-color: #fff;
-    color: #121212;
+    background-color: rgb(32,33,36);
+    color: #fff;
+    list-style: none;
     a{
         text-decoration: none;
-        color: #121212;
+        color: #fff;
     }
 }
 `;

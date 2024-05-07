@@ -9,7 +9,6 @@ const Sheader = styled.header`
   padding: ${pcLayoutSize.padding};
   opacity: 1;
   position: relative;
-  background-color: antiquewhite;
 
   @media screen and (max-width: 1200px) {
     padding: ${tabLayoutSize.padding};
@@ -68,7 +67,7 @@ const DropMenu = styled.div`
     top: 100%;
     left: 0;
     padding: ${moLayoutSize.padding};
-    background-color: aliceblue;
+    background-color: gray;
   }
 `;
 const SubMenu = styled.ul`
