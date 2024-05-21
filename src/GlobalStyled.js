@@ -20,6 +20,7 @@ body{
     background-color: rgb(32,33,36);
     color: #fff;
     list-style: none;
+    box-sizing: border-box;
     a{
         text-decoration: none;
         color: #fff;

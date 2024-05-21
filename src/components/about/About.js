@@ -24,7 +24,7 @@ const Container = styled.div`
   overflow: hidden;
 `;
 const SectionTitle = styled.div`
-  margin-top: 120px;
+  margin-top: 100px;
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 80px;
@@ -87,13 +87,17 @@ export const About = () => {
             <li>머시기저시기</li>
             <ButtonWrap>
               <li>
-                <a href="#">E-mail</a>
+                <a href="/">E-mail</a>
               </li>
               <li>
-                <a href="#">Resume</a>
+                <a href="/">Resume</a>
               </li>
               <li>
-                <a href="https://github.com/imme6731" target="_blank">
+                <a
+                  href="https://github.com/imme6731"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Github
                 </a>
               </li>
