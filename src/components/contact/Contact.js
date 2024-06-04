@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
 import { styled } from "styled-components";
 import { ErrorMsg } from "./components/ErrorMsg";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Wrap = styled.div`
   width: 100%;
@@ -66,7 +68,7 @@ const BtnWrap = styled.div`
   justify-content: flex-end;
   margin-top: 20px;
 `;
-const Button = styled.button`
+const Button = styled.input`
   all: unset;
   width: 140px;
   height: 60px;
@@ -81,19 +83,40 @@ const Button = styled.button`
 `;
 
 export const Contact = () => {
+  const form = useRef();
+
   const {
     register,
     formState: { errors, isValid },
-  } = useForm({ mode: "onChange" });
+  } = useForm({ mode: "onSubmit" });
+
+  const Submit = (e) => {
+    e.preventDefault();
+
+    if (!form.current) {
+      console.log(`form error`);
+      return;
+    } else {
+      emailjs
+        .sendForm(`portfolio_contact`, `template_eykcv99`, form.current, {
+          publicKey: `NolR-NnvwPJoVdj_j`,
+        })
+        .then(
+          () => {
+            console.log(`success!`);
+            alert(`메일이 전송되었습니다.`);
+          },
+          (error) => {
+            console.log(`Failed...`, error.text);
+          }
+        );
+    }
+  };
 
   return (
     <Wrap>
       <Container>
-        <Form
-          className="gform"
-          action="https://script.google.com/macros/s/AKfycbzsM5A5EvIFHTkWlEBDumyOU097PTKDRONi8TrLDB_w1xNBbr31B0UaDg5Iz2u2k_a0/exec"
-          method="POST"
-        >
+        <Form ref={form} onSubmit={Submit}>
           <ConTitle>
             Contact me <FontAwesomeIcon icon={faEnvelope} className="msgIcon" />
           </ConTitle>
@@ -102,12 +125,9 @@ export const Contact = () => {
           <Input
             {...register("name", {
               required: "이름은 필수 입니다.",
-              minLength: {
-                value: 1,
-                message: "이름은 필수 입니다.",
-              },
             })}
             placeholder="성함을 입력해주세요."
+            name="user_name"
           />
 
           <InputTitle>E-mail</InputTitle>
@@ -117,6 +137,7 @@ export const Contact = () => {
             })}
             type="email"
             placeholder="메일 주소를 입력해주세요."
+            name="email"
           />
 
           <InputTitle>Message</InputTitle>
@@ -131,6 +152,7 @@ export const Contact = () => {
             type="text"
             placeholder="내용을 입력해주세요."
             rows={8}
+            name="text"
           />
 
           {errors?.name?.message ? (
@@ -143,9 +165,7 @@ export const Contact = () => {
             ""
           )}
           <BtnWrap>
-            <Button $isActive={isValid} type="submit">
-              SEND
-            </Button>
+            <Button $isActive={isValid} type="submit" value={`Send`} />
           </BtnWrap>
         </Form>
       </Container>

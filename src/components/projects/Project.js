@@ -216,7 +216,10 @@ export const Project = () => {
                       </a>
                     </UrlBtn>
                   </ProjectTitle>
-                  <Desc></Desc>
+                  <Desc>
+                    서울교통공사 웹페이지를 리뉴얼한 반응형 사이트입니다.
+                    react를 사용하여 메인페이지만 구성하엿습니다.
+                  </Desc>
                   <Skill>
                     <h2>Skill</h2>
                     <ul>
@@ -251,7 +254,10 @@ export const Project = () => {
                       </a>
                     </UrlBtn>
                   </ProjectTitle>
-                  <Desc></Desc>
+                  <Desc>
+                    송월타월 웹페이지를 리뉴얼한 반응형 사이트입니다. html,
+                    css를 사용하여 메인페이지만 구성하엿습니다.
+                  </Desc>
                   <Skill>
                     <h2>Skill</h2>
                     <ul>
@@ -286,7 +292,10 @@ export const Project = () => {
                       </a>
                     </UrlBtn>
                   </ProjectTitle>
-                  <Desc></Desc>
+                  <Desc>
+                    롬앤 웹페이지를 리뉴얼한 반응형 사이트입니다. html, css를
+                    사용하여 메인페이지만 구성하엿습니다.
+                  </Desc>
                   <Skill>
                     <h2>Skill</h2>
                     <ul>
