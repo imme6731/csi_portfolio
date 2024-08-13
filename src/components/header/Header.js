@@ -6,24 +6,31 @@ import { useEffect, useRef, useState } from "react";
 import "./mobileMenu.css";
 
 const Sheader = styled.header`
-  padding: ${pcLayoutSize.padding};
-  opacity: 1;
   position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 900;
+  padding: 25px 0;
+  opacity: 1;
+  color: #fff;
 
   @media screen and (max-width: 1200px) {
     padding: ${tabLayoutSize.padding};
   }
   @media screen and (max-width: 760px) {
-    padding: ${moLayoutSize.padding};
+    padding: 0;
   }
 `;
 const HeaderWrap = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 0;
+  padding: ${pcLayoutSize.padding};
   @media screen and (max-width: 760px) {
-    padding: 20px 0;
+    padding: 20px;
   }
 `;
 const Logo = styled.div`

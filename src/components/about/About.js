@@ -10,7 +10,6 @@ import { ReactComponent as Node } from "../../asserts/images/node.svg";
 import { ReactComponent as Github } from "../../asserts/images/github.svg";
 import { ReactComponent as Figma } from "../../asserts/images/figma.svg";
 import profil01 from "../../asserts/images/profile_img1.jpg";
-import profil02 from "../../asserts/images/profile_img2.jpg";
 
 const Wrap = styled.div`
   width: 100%;
@@ -92,21 +91,22 @@ const SkillBtn = styled.div`
 `;
 
 export const About = () => {
+  //985 or 984
   return (
     <Wrap>
       <Container>
         <SectionTitle>About</SectionTitle>
         <ContainBox>
-          <ImgBox src={profil02} />
+          <ImgBox src={profil01} />
           <TxtBox>
             <li>안녕하세요. 프론트엔드 개발자 최성임입니다.</li>
             <li>
               저는 <b>새로운 기술과 지식을 배우는 것</b>에 대한 두려움이 없으며,
               오히려 그것에 대한 <b>열정과 호기심</b>을 가지고 있습니다. 원활한
               소통을 중요하게 여기며, 팀원들과
-              <b>적극적으로 의사소통</b>
+              <b> 적극적으로 의사소통</b>
               하여 프로젝트를 진행할 수 있도록 노력합니다.
-              <b>지속적인 자기계발과 성장</b>을 추구하여 전문성을 쌓아가고
+              <b> 지속적인 자기계발과 성장</b>을 추구하여 전문성을 쌓아가고
               있습니다. 다양한 도전과 경험을 토대로 <b>최선의 UX를 제공</b>하는
               프론트엔드 개발자가 되고 싶습니다.
             </li>

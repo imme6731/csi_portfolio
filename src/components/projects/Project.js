@@ -95,6 +95,7 @@ const Skill = styled.div`
 `;
 
 export const Project = () => {
+  //1973
   return (
     <Wrap>
       <Container>
@@ -302,6 +303,42 @@ export const Project = () => {
                       <li>html</li>
                       <li>css</li>
                       <li>javascript</li>
+                    </ul>
+                  </Skill>
+                </TextBox>
+              </ProjectCon>
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectCon>
+                {/* <ImgBox src={}></ImgBox> */}
+                <TextBox>
+                  <ProjectTitle>
+                    <h1>csi portfolio</h1>
+                    <UrlBtn>
+                      <a
+                        href="https://github.com/imme6731/csi_portfolio"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FontAwesomeIcon icon={faGithub} />
+                      </a>
+                      {/* <a href="#" target="_blank" rel="noreferrer">
+                        <FontAwesomeIcon icon={faHouseChimney} />
+                      </a> */}
+                    </UrlBtn>
+                  </ProjectTitle>
+                  <Desc>
+                    프론트엔드 개발자 최성임의 포트폴리오 사이트입니다. 저에
+                    대한 간단한 소개글과 작업했던 프로젝트들을 볼 수 있습니다.
+                  </Desc>
+                  <Skill>
+                    <h2>Skill</h2>
+                    <ul>
+                      <li>html</li>
+                      <li>css</li>
+                      <li>javascript</li>
+                      <li>styled-components</li>
+                      <li>react hook</li>
                     </ul>
                   </Skill>
                 </TextBox>
