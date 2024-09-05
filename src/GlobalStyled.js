@@ -6,7 +6,7 @@ export const pcLayoutSize = {
 };
 
 export const tabLayoutSize = {
-  padding: "0 80px",
+  padding: "0 150px",
 };
 
 export const moLayoutSize = {

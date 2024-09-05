@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { pcLayoutSize } from "../../GlobalStyled";
 import cinemaz from "../../asserts/images/cinemaz_scrennshot.png";
 import colorcast from "../../asserts/images/colorcast_screenshot.png";
 import seoulMetro from "../../asserts/images/seoulmetro_screenshot.png";
@@ -19,20 +18,24 @@ import { Pagination, Navigation } from "swiper/modules";
 
 const Wrap = styled.div`
   width: 100%;
-  height: 100vh;
   position: relative;
   overflow: hidden;
 `;
 const Container = styled.div``;
 const SectionTitle = styled.div`
-  padding: ${pcLayoutSize.padding};
   margin-top: 100px;
   font-size: 48px;
   font-weight: 800;
-  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 `;
 const ConWrap = styled.div`
   padding: 0 60px;
+  margin-bottom: 100px;
+  @media screen and (max-width: 1000px) {
+    padding: 0 40px;
+  }
 `;
 const ProjectCon = styled.div`
   width: 100%;
@@ -40,6 +43,17 @@ const ProjectCon = styled.div`
   border: 1.5px solid #fff;
   border-radius: 30px;
   padding: 0 10px;
+  @media screen and (max-width: 1600px) {
+    height: 680px;
+  }
+  @media screen and (max-width: 1450px) {
+    height: 600px;
+  }
+  @media screen and (max-width: 760px) {
+    width: 400px;
+    height: 550px;
+    margin: 0 auto;
+  }
 `;
 const ImgBox = styled.img`
   width: 100%;
@@ -49,17 +63,40 @@ const ImgBox = styled.img`
   border-radius: 30px 30px 0 0;
   object-fit: cover;
   object-position: top;
+  @media screen and (max-width: 1450px) {
+    height: 250px;
+  }
+  @media screen and (max-width: 1450px) {
+    height: 250px;
+  }
+  @media screen and (max-width: 760px) {
+    height: 250px;
+    margin-bottom: 30px;
+  }
 `;
 const TextBox = styled.div`
   padding: 0 20px;
 `;
 const ProjectTitle = styled.div`
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 15px;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 1450px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: unset;
+    > h1 {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (max-width: 760px) {
+    > h1 {
+      margin-bottom: 30px;
+    }
+  }
 `;
 const UrlBtn = styled.div`
   font-size: 28px;
@@ -68,16 +105,28 @@ const UrlBtn = styled.div`
       margin-right: 20px;
     }
   }
+  @media screen and (max-width: 1450px) {
+    margin-bottom: 10px;
+  }
+  @media screen and (max-width: 760px) {
+    margin-bottom: 20px;
+  }
 `;
 const Desc = styled.div`
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 30px;
+  @media screen and (max-width: 1600px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 760px) {
+    display: none;
+  }
 `;
 const Skill = styled.div`
   margin-bottom: 30px;
   & h2 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
     font-weight: 500;
   }
@@ -92,7 +141,36 @@ const Skill = styled.div`
       font-weight: 300;
     }
   }
+  @media screen and (max-width: 1450px) {
+    display: none;
+  }
+  @media screen and (max-width: 760px) {
+    display: unset;
+  }
 `;
+
+const params = {
+  slidesPerView: 3,
+  spaceBetween: 80,
+  breakpoints: {
+    1600: {
+      slidesPerView: 3,
+      spaceBetween: 80,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+    760: {
+      slidesPerView: 2,
+      spaceBetween: 50,
+    },
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+    },
+  },
+};
 
 export const Project = () => {
   //1973
@@ -102,12 +180,11 @@ export const Project = () => {
         <SectionTitle>Project</SectionTitle>
         <ConWrap>
           <Swiper
-            slidesPerView={3}
-            spaceBetween={80}
             loop={true}
             pagination={{ clickable: true }}
             navigation={true}
             modules={[Pagination, Navigation]}
+            {...params}
           >
             <SwiperSlide>
               <ProjectCon>
@@ -199,7 +276,7 @@ export const Project = () => {
                 <ImgBox src={seoulMetro}></ImgBox>
                 <TextBox>
                   <ProjectTitle>
-                    <h1>서율교통공사 리뉴얼</h1>
+                    <h1>서울교통공사 리뉴얼</h1>
                     <UrlBtn>
                       <a
                         href="https://github.com/imme6731/SeoulMetro"

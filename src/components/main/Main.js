@@ -19,7 +19,13 @@ const MainTxtWrap = styled.div`
   top: 50%;
   left: 140px;
   font-size: 90px;
+  line-height: 100px;
   font-weight: 800;
+  @media screen and (max-width: 1000px) {
+    left: 60px;
+    font-size: 64px;
+    line-height: 80px;
+  }
 `;
 const Scroll = styled.div`
   position: absolute;

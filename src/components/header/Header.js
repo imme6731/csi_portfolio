@@ -16,9 +16,6 @@ const Sheader = styled.header`
   opacity: 1;
   color: #fff;
 
-  @media screen and (max-width: 1200px) {
-    padding: ${tabLayoutSize.padding};
-  }
   @media screen and (max-width: 760px) {
     padding: 0;
   }
@@ -29,6 +26,12 @@ const HeaderWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: ${pcLayoutSize.padding};
+  @media screen and (max-width: 1200px) {
+    padding: ${tabLayoutSize.padding};
+  }
+  @media screen and (max-width: 1000px) {
+    padding: 0 40px;
+  }
   @media screen and (max-width: 760px) {
     padding: 20px;
   }
@@ -51,14 +54,14 @@ const Nav = styled.ul`
       margin-left: unset;
     }
   }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 1000px) {
     display: none;
   }
 `;
 
 const MenuBtn = styled.div`
   display: none;
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 1000px) {
     display: block;
     font-size: 24px;
     cursor: pointer;
@@ -67,7 +70,7 @@ const MenuBtn = styled.div`
 
 const DropMenu = styled.div`
   display: none;
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 1000px) {
     display: block;
     width: -webkit-fill-available;
     position: absolute;
@@ -79,7 +82,7 @@ const DropMenu = styled.div`
 `;
 const SubMenu = styled.ul`
   display: none;
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 1000px) {
     display: block;
     li {
       padding: 20px;

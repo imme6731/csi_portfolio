@@ -8,7 +8,6 @@ import emailjs from "@emailjs/browser";
 
 const Wrap = styled.div`
   width: 100%;
-  height: 100vh;
   position: relative;
   overflow: hidden;
 `;
@@ -17,6 +16,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 80px;
 `;
 const Form = styled.form`
   width: 100%;
@@ -27,6 +27,10 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   position: relative;
+  @media screen and (max-width: 760px) {
+    max-width: 320px;
+    padding: 30px 30px;
+  }
 `;
 const ConTitle = styled.h2`
   font-size: 48px;
@@ -40,11 +44,21 @@ const ConTitle = styled.h2`
     margin-left: 15px;
     font-size: 40px;
   }
+  @media screen and (max-width: 760px) {
+    font-size: 32px;
+    margin-bottom: 30px;
+    & > .msgIcon {
+      font-size: 32px;
+    }
+  }
 `;
 const InputTitle = styled.h3`
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px;
+  @media screen and (max-width: 760px) {
+    font-size: 18px;
+  }
 `;
 const Input = styled.input`
   height: 40px;
@@ -80,6 +94,12 @@ const Button = styled.input`
   cursor: pointer;
   background-color: ${(props) => (props.$isActive ? `#fff` : `unset`)};
   color: ${(props) => (props.$isActive ? `#121212` : `#fff`)};
+  @media screen and (max-width: 760px) {
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+  }
 `;
 
 export const Contact = () => {

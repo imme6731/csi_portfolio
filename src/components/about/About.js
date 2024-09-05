@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { pcLayoutSize } from "../../GlobalStyled";
+import { pcLayoutSize, tabLayoutSize } from "../../GlobalStyled";
 import { ReactComponent as Html } from "../../asserts/images/html5.svg";
 import { ReactComponent as Css } from "../../asserts/images/css3.svg";
 import { ReactComponent as Javascript } from "../../asserts/images/javascript.svg";
@@ -13,7 +13,7 @@ import profil01 from "../../asserts/images/profile_img1.jpg";
 
 const Wrap = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: relative;
   overflow: hidden;
   background-color: #f8f8f8;
@@ -23,18 +23,36 @@ const Container = styled.div`
   padding: ${pcLayoutSize.padding};
   height: 100%;
   overflow: hidden;
+
+  @media screen and (max-width: 1600px) {
+    padding: ${tabLayoutSize.padding};
+  }
+  @media screen and (max-width: 1000px) {
+    padding: 0 60px;
+  }
 `;
 const SectionTitle = styled.div`
   margin-top: 100px;
   font-size: 48px;
   font-weight: 800;
-  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  @media screen and (max-width: 1000px) {
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
 `;
 const ContainBox = styled.div`
   width: 100%;
   height: 520px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 220px;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const ImgBox = styled.img`
   width: 30%;
@@ -42,12 +60,22 @@ const ImgBox = styled.img`
   object-fit: cover;
   object-position: bottom;
   border-radius: 50%;
+  @media screen and (max-width: 1200px) {
+    height: 80%;
+  }
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `;
 const TxtBox = styled.ul`
   width: 60%;
   height: 100%;
   box-sizing: border-box;
-
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
+`;
+const Txt = styled.ul`
   & > li {
     font-size: 22px;
     line-height: 34px;
@@ -61,6 +89,10 @@ const ButtonWrap = styled.ul`
   display: flex;
   margin-bottom: 40px;
   margin-top: 40px;
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 60px;
+    margin-top: 60px;
+  }
 
   & > li {
     padding: 10px;
@@ -81,13 +113,14 @@ const SKillWrap = styled.div`
   width: 80%;
 `;
 const SkillTitle = styled.div`
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: 600;
   margin-bottom: 30px;
 `;
 const SkillBtn = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-row-gap: 20px;
+  grid-row-gap: 30px;
 `;
 
 export const About = () => {
@@ -99,17 +132,19 @@ export const About = () => {
         <ContainBox>
           <ImgBox src={profil01} />
           <TxtBox>
-            <li>안녕하세요. 프론트엔드 개발자 최성임입니다.</li>
-            <li>
-              저는 <b>새로운 기술과 지식을 배우는 것</b>에 대한 두려움이 없으며,
-              오히려 그것에 대한 <b>열정과 호기심</b>을 가지고 있습니다. 원활한
-              소통을 중요하게 여기며, 팀원들과
-              <b> 적극적으로 의사소통</b>
-              하여 프로젝트를 진행할 수 있도록 노력합니다.
-              <b> 지속적인 자기계발과 성장</b>을 추구하여 전문성을 쌓아가고
-              있습니다. 다양한 도전과 경험을 토대로 <b>최선의 UX를 제공</b>하는
-              프론트엔드 개발자가 되고 싶습니다.
-            </li>
+            <Txt>
+              <li>안녕하세요. 프론트엔드 개발자 최성임입니다.</li>
+              <li>
+                저는 <b>새로운 기술과 지식을 배우는 것</b>에 대한 두려움이
+                없으며, 오히려 그것에 대한 <b>열정과 호기심</b>을 가지고
+                있습니다. 원활한 소통을 중요하게 여기며, 팀원들과
+                <b> 적극적으로 의사소통</b>
+                하여 프로젝트를 진행할 수 있도록 노력합니다.
+                <b> 지속적인 자기계발과 성장</b>을 추구하여 전문성을 쌓아가고
+                있습니다. 다양한 도전과 경험을 토대로 <b>최선의 UX를 제공</b>
+                하는 프론트엔드 개발자가 되고 싶습니다.
+              </li>
+            </Txt>
             <ButtonWrap>
               <li>
                 <a href="/">E-mail</a>
