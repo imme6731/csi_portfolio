@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { moLayoutSize, pcLayoutSize, tabLayoutSize } from "../../GlobalStyled";
+import { moLayoutSize } from "../../GlobalStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
@@ -25,9 +25,9 @@ const HeaderWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${pcLayoutSize.padding};
+  padding: 0 250px;
   @media screen and (max-width: 1200px) {
-    padding: ${tabLayoutSize.padding};
+    padding: 0 150px;
   }
   @media screen and (max-width: 1000px) {
     padding: 0 40px;

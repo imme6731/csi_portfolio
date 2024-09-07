@@ -26,6 +26,14 @@ const MainTxtWrap = styled.div`
     font-size: 64px;
     line-height: 80px;
   }
+  @media screen and (max-width: 760px) {
+    left: 50%;
+    margin-left: -153px;
+    margin-top: -90px;
+    font-size: 42px;
+    line-height: 60px;
+    text-align: center;
+  }
 `;
 const Scroll = styled.div`
   position: absolute;

@@ -12,11 +12,19 @@ const Wrap = styled.div`
   overflow: hidden;
 `;
 const Container = styled.div`
-  padding: 120px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
+  padding: 150px 0;
+  @media screen and (max-width: 1200px) {
+    padding: 100px 0;
+  }
+  @media screen and (max-width: 760px) {
+    padding: 80px 0;
+  }
+  @media screen and (max-width: 460px) {
+    padding: 80px 20px;
+  }
 `;
 const Form = styled.form`
   width: 100%;
@@ -30,6 +38,9 @@ const Form = styled.form`
   @media screen and (max-width: 760px) {
     max-width: 320px;
     padding: 30px 30px;
+  }
+  @media screen and (max-width: 460px) {
+    width: 80%;
   }
 `;
 const ConTitle = styled.h2`
@@ -45,10 +56,17 @@ const ConTitle = styled.h2`
     font-size: 40px;
   }
   @media screen and (max-width: 760px) {
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 30px;
     & > .msgIcon {
-      font-size: 32px;
+      font-size: 36px;
+    }
+  }
+  @media screen and (max-width: 460px) {
+    font-size: 28px;
+    margin-bottom: 30px;
+    & > .msgIcon {
+      font-size: 28px;
     }
   }
 `;
@@ -59,6 +77,9 @@ const InputTitle = styled.h3`
   @media screen and (max-width: 760px) {
     font-size: 18px;
   }
+  @media screen and (max-width: 460px) {
+    font-size: 16px;
+  }
 `;
 const Input = styled.input`
   height: 40px;
@@ -66,6 +87,10 @@ const Input = styled.input`
   font-size: 16px;
   padding-left: 10px;
   border-radius: 10px;
+  @media screen and (max-width: 460px) {
+    height: 28px;
+    font-size: 14px;
+  }
 `;
 const MessageBox = styled.textarea`
   resize: vertical;
@@ -74,6 +99,9 @@ const MessageBox = styled.textarea`
   padding-top: 8px;
   border-radius: 10px;
   margin-bottom: 20px;
+  @media screen and (max-width: 460px) {
+    font-size: 14px;
+  }
 `;
 
 const BtnWrap = styled.div`

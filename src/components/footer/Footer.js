@@ -20,9 +20,7 @@ export const Footer = () => {
   return (
     <Wrap>
       <Container>
-        <CopyRight>
-          © 2023 Front-end developer portfolio by Seongim Choi
-        </CopyRight>
+        <CopyRight>© 2024 Front-end developer portfolio by CSI</CopyRight>
       </Container>
     </Wrap>
   );

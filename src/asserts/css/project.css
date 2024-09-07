@@ -44,3 +44,10 @@
     right: 0 !important;
   }
 }
+@media screen and (max-width: 460px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 24px !important;
+    height: 26px !important;
+  }
+}

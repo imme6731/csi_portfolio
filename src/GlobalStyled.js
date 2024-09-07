@@ -2,11 +2,11 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 export const pcLayoutSize = {
-  padding: "0 250px",
+  padding: "150px 250px",
 };
 
 export const tabLayoutSize = {
-  padding: "0 150px",
+  padding: "100px 150px",
 };
 
 export const moLayoutSize = {

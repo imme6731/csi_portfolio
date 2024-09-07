@@ -10,6 +10,7 @@ import { ReactComponent as Node } from "../../asserts/images/node.svg";
 import { ReactComponent as Github } from "../../asserts/images/github.svg";
 import { ReactComponent as Figma } from "../../asserts/images/figma.svg";
 import profil01 from "../../asserts/images/profile_img1.jpg";
+import "../../asserts/css/skill.css";
 
 const Wrap = styled.div`
   width: 100%;
@@ -24,31 +25,33 @@ const Container = styled.div`
   height: 100%;
   overflow: hidden;
 
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 1320px) {
     padding: ${tabLayoutSize.padding};
   }
-  @media screen and (max-width: 1000px) {
-    padding: 0 60px;
+  @media screen and (max-width: 760px) {
+    padding: 80px 60px;
+  }
+  @media screen and (max-width: 430px) {
+    padding: 80px 20px;
   }
 `;
 const SectionTitle = styled.div`
-  margin-top: 100px;
   font-size: 48px;
   font-weight: 800;
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
   @media screen and (max-width: 1000px) {
-    margin-top: 80px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+  }
+  @media screen and (max-width: 760px) {
+    font-size: 36px;
   }
 `;
 const ContainBox = styled.div`
   width: 100%;
-  height: 520px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 220px;
   @media screen and (max-width: 1000px) {
     flex-direction: column;
     align-items: center;
@@ -56,16 +59,21 @@ const ContainBox = styled.div`
 `;
 const ImgBox = styled.img`
   width: 30%;
-  height: 100%;
+  height: 530px;
   object-fit: cover;
   object-position: bottom;
   border-radius: 50%;
   @media screen and (max-width: 1200px) {
-    height: 80%;
+    height: 530px;
   }
   @media screen and (max-width: 1000px) {
-    display: none;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 40px;
   }
+  /* @media screen and (max-width: 760px) {
+    display: none;
+  } */
 `;
 const TxtBox = styled.ul`
   width: 60%;
@@ -82,6 +90,14 @@ const Txt = styled.ul`
     b {
       font-weight: 700;
     }
+    @media screen and (max-width: 1000px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @media screen and (max-width: 430px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 `;
 const ButtonWrap = styled.ul`
@@ -92,6 +108,10 @@ const ButtonWrap = styled.ul`
   @media screen and (max-width: 1000px) {
     margin-bottom: 60px;
     margin-top: 60px;
+  }
+  @media screen and (max-width: 430px) {
+    margin-bottom: 40px;
+    margin-top: 40px;
   }
 
   & > li {
@@ -110,12 +130,15 @@ const ButtonWrap = styled.ul`
   }
 `;
 const SKillWrap = styled.div`
-  width: 80%;
+  width: 100%;
 `;
 const SkillTitle = styled.div`
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 30px;
+  @media screen and (max-width: 430px) {
+    font-size: 24px;
+  }
 `;
 const SkillBtn = styled.div`
   display: grid;
@@ -165,15 +188,15 @@ export const About = () => {
             <SKillWrap>
               <SkillTitle>Skill</SkillTitle>
               <SkillBtn>
-                <Html style={{ width: "60px", height: "60px" }} />
-                <Css style={{ width: "60px", height: "60px" }} />
-                <Javascript style={{ width: "60px", height: "60px" }} />
-                <Typescript style={{ width: "60px", height: "60px" }} />
-                <React style={{ width: "60px", height: "60px" }} />
-                <ReactQuery style={{ width: "60px", height: "60px" }} />
-                <Node style={{ width: "60px", height: "60px" }} />
-                <Github style={{ width: "60px", height: "60px" }} />
-                <Figma style={{ width: "60px", height: "60px" }} />
+                <Html className="size" />
+                <Css className="size" />
+                <Javascript className="size" />
+                <Typescript className="size" />
+                <React className="size" />
+                <ReactQuery className="size" />
+                <Node className="size" />
+                <Github className="size" />
+                <Figma className="size" />
               </SkillBtn>
             </SKillWrap>
           </TxtBox>

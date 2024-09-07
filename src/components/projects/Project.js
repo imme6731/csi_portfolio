@@ -18,23 +18,39 @@ import { Pagination, Navigation } from "swiper/modules";
 
 const Wrap = styled.div`
   width: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden;
 `;
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 150px 0;
+  @media screen and (max-width: 1200px) {
+    padding: 100px 0;
+  }
+  @media screen and (max-width: 760px) {
+    padding: 80px 0;
+  }
+`;
 const SectionTitle = styled.div`
-  margin-top: 100px;
   font-size: 48px;
   font-weight: 800;
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 80px;
+  }
+  @media screen and (max-width: 760px) {
+    font-size: 36px;
+  }
 `;
 const ConWrap = styled.div`
   padding: 0 60px;
-  margin-bottom: 100px;
   @media screen and (max-width: 1000px) {
     padding: 0 40px;
+  }
+  @media screen and (max-width: 460px) {
+    padding: 0 20px;
   }
 `;
 const ProjectCon = styled.div`
@@ -54,6 +70,10 @@ const ProjectCon = styled.div`
     height: 550px;
     margin: 0 auto;
   }
+  @media screen and (max-width: 460px) {
+    width: 360px;
+    height: 520px;
+  }
 `;
 const ImgBox = styled.img`
   width: 100%;
@@ -66,12 +86,8 @@ const ImgBox = styled.img`
   @media screen and (max-width: 1450px) {
     height: 250px;
   }
-  @media screen and (max-width: 1450px) {
-    height: 250px;
-  }
-  @media screen and (max-width: 760px) {
-    height: 250px;
-    margin-bottom: 30px;
+  @media screen and (max-width: 460px) {
+    height: 220px;
   }
 `;
 const TextBox = styled.div`
@@ -79,6 +95,7 @@ const TextBox = styled.div`
 `;
 const ProjectTitle = styled.div`
   font-size: 28px;
+  line-height: 36px;
   margin-bottom: 15px;
   font-weight: 500;
   display: flex;
@@ -97,6 +114,14 @@ const ProjectTitle = styled.div`
       margin-bottom: 30px;
     }
   }
+  @media screen and (max-width: 460px) {
+    > h1 {
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+    margin-bottom: unset;
+  }
 `;
 const UrlBtn = styled.div`
   font-size: 28px;
@@ -111,6 +136,9 @@ const UrlBtn = styled.div`
   @media screen and (max-width: 760px) {
     margin-bottom: 20px;
   }
+  @media screen and (max-width: 460px) {
+    font-size: 24px;
+  }
 `;
 const Desc = styled.div`
   font-size: 18px;
@@ -121,6 +149,7 @@ const Desc = styled.div`
   }
   @media screen and (max-width: 760px) {
     display: none;
+    margin-bottom: unset;
   }
 `;
 const Skill = styled.div`
