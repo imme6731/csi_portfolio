@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { About } from "./components/about/About";
 import { Contact } from "./components/contact/Contact";
 import { Footer } from "./components/footer/Footer";
@@ -6,18 +7,28 @@ import { Main } from "./components/main/Main";
 import { Project } from "./components/projects/Project";
 
 const App = () => {
-  const handlerScroll = () => {
-    const pageY = window.pageYOffset;
-    console.log(pageY);
-  };
-  window.addEventListener("scroll", handlerScroll);
+  // useEffect(() => {
+  //   console.log("inputRef in Parent", inputRef);
+  // }, []);
+
+  const aboutGoRef = useRef(null);
+  const projecGotRef = useRef(null);
+  const contactGoRef = useRef(null);
+  // const onMove = () => {
+  //   inputRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  // };
+
   return (
     <>
-      <Header />
+      <Header
+        aboutRef={aboutGoRef}
+        projectRef={projecGotRef}
+        contactRef={contactGoRef}
+      />
       <Main />
-      <About />
-      <Project />
-      <Contact />
+      <About ref={aboutGoRef} />
+      <Project ref={projecGotRef} />
+      <Contact ref={contactGoRef} />
       <Footer />
     </>
   );

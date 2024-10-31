@@ -11,6 +11,7 @@ import { ReactComponent as Github } from "../../asserts/images/github.svg";
 import { ReactComponent as Figma } from "../../asserts/images/figma.svg";
 import profil01 from "../../asserts/images/profile_img1.jpg";
 import "../../asserts/css/skill.css";
+import { forwardRef } from "react";
 
 const Wrap = styled.div`
   width: 100%;
@@ -146,11 +147,12 @@ const SkillBtn = styled.div`
   grid-row-gap: 30px;
 `;
 
-export const About = () => {
+export const About = forwardRef((props, ref) => {
   //985 or 984
+
   return (
     <Wrap>
-      <Container>
+      <Container ref={ref}>
         <SectionTitle>About</SectionTitle>
         <ContainBox>
           <ImgBox src={profil01} />
@@ -204,4 +206,4 @@ export const About = () => {
       </Container>
     </Wrap>
   );
-};
+});

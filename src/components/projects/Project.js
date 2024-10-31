@@ -15,6 +15,7 @@ import "swiper/css/navigation";
 import "../../asserts/css/project.css";
 
 import { Pagination, Navigation } from "swiper/modules";
+import { forwardRef } from "react";
 
 const Wrap = styled.div`
   width: 100%;
@@ -201,11 +202,11 @@ const params = {
   },
 };
 
-export const Project = () => {
+export const Project = forwardRef((props, ref) => {
   //1973
   return (
     <Wrap>
-      <Container>
+      <Container ref={ref}>
         <SectionTitle>Project</SectionTitle>
         <ConWrap>
           <Swiper
@@ -455,4 +456,4 @@ export const Project = () => {
       </Container>
     </Wrap>
   );
-};
+});

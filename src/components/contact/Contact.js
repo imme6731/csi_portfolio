@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
 import { styled } from "styled-components";
 import { ErrorMsg } from "./components/ErrorMsg";
-import { useRef } from "react";
+import { forwardRef, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const Wrap = styled.div`
@@ -130,7 +130,7 @@ const Button = styled.input`
   }
 `;
 
-export const Contact = () => {
+export const Contact = forwardRef((props, ref) => {
   //2956
   const form = useRef();
 
@@ -164,7 +164,7 @@ export const Contact = () => {
 
   return (
     <Wrap>
-      <Container>
+      <Container ref={ref}>
         <Form ref={form} onSubmit={Submit}>
           <ConTitle>
             Contact me <FontAwesomeIcon icon={faEnvelope} className="msgIcon" />
@@ -220,4 +220,4 @@ export const Contact = () => {
       </Container>
     </Wrap>
   );
-};
+});

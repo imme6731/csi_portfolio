@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import "./mobileMenu.css";
 
 const Sheader = styled.header`
-  position: relative;
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -92,35 +92,81 @@ const SubMenu = styled.ul`
   }
 `;
 
-export const Header = () => {
+export const Header = ({ aboutRef, projectRef, contactRef }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropDownRef = useRef();
+  const headerRef = useRef();
+
+  const scrollHandler = () => {
+    const pageY = window.scrollY;
+
+    if (pageY > 100) {
+      headerRef.current.style.backgroundColor = "rgba(32,33,36,0.8)";
+    } else {
+      headerRef.current.style.backgroundColor = "transparent";
+    }
+  };
+
   const onClickMenu = () => {
     setIsOpen((isOpen) => !isOpen);
   };
 
   useEffect(() => {
-    const outSideClick = (e) => {
-      const { target } = e;
-      if (
-        isOpen &&
-        dropDownRef.current &&
-        !dropDownRef.current.contains(target)
-      ) {
-        setIsOpen(false);
+    (async () => {
+      try {
+        const outSideClick = (e) => {
+          const { target } = e;
+          if (
+            isOpen &&
+            dropDownRef.current &&
+            !dropDownRef.current.contains(target)
+          ) {
+            setIsOpen(false);
+          }
+        };
+        document.addEventListener("mousedown", outSideClick);
+        return window.addEventListener("scroll", scrollHandler);
+      } catch (error) {
+        console.log("에러:" + error);
       }
-    };
-    document.addEventListener("mousedown", outSideClick);
+    })();
   }, [isOpen]);
 
   return (
-    <Sheader>
+    <Sheader ref={headerRef}>
       <HeaderWrap>
         <Logo>Choi SeongIm</Logo>
         <Nav>
-          <li>ABOUT</li>
-          <li>PROJECTS</li>
-          <li>CONTACT</li>
+          <li
+            onClick={() => {
+              aboutRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
+            ABOUT
+          </li>
+          <li
+            onClick={() => {
+              projectRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
+            PROJECTS
+          </li>
+          <li
+            onClick={() => {
+              contactRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
+            CONTACT
+          </li>
         </Nav>
 
         {/* 모바일 */}
@@ -135,9 +181,36 @@ export const Header = () => {
             }
           >
             <SubMenu>
-              <li>ABOUT</li>
-              <li>PROJECTS</li>
-              <li>CONTACT</li>
+              <li
+                onClick={() => {
+                  aboutRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
+              >
+                ABOUT
+              </li>
+              <li
+                onClick={() => {
+                  projectRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
+              >
+                PROJECTS
+              </li>
+              <li
+                onClick={() => {
+                  contactRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
+              >
+                CONTACT
+              </li>
             </SubMenu>
           </DropMenu>
         )}
